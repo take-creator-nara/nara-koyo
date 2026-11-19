@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>奈良の紅葉タイムライン｜見頃予想カレンダー</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+         background: #fff9f0; color: #4a3428; line-height: 1.7; }
+  .hero { background: linear-gradient(135deg, #fff3e0 0%, #ffe3d3 45%, #ffd9c0 100%);
+          padding: 44px 20px 34px; text-align: center; border-bottom: 4px solid #e8834c; }
+  .hero .kicker { color: #c0392b; font-weight: 700; letter-spacing: .2em; font-size: 13px; }
+  .hero h1 { font-size: 32px; color: #7a2d12; margin: 8px 0 6px; font-weight: 800; }
+  .hero p { color: #8a5a3b; font-size: 14px; }
+  .hero .upd { display: inline-block; margin-top: 12px; background: #fff; color: #c0392b;
+               border: 1px solid #f0b48f; border-radius: 999px; padding: 3px 14px; font-size: 13px; font-weight: 700; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 16px 48px; }
+  h2 { font-size: 20px; color: #7a2d12; margin: 30px 0 12px; padding-left: 10px; border-left: 6px solid #e8834c; }
+  .now-box { background: #fff; border: 1px solid #f3d3ae; border-radius: 14px; padding: 16px 18px;
+             box-shadow: 0 2px 8px rgba(200,120,60,.08); font-size: 15px; }
+  .now-box b { color: #c0392b; }
+  .chart { background: #fff; border: 1px solid #f3d3ae; border-radius: 14px; padding: 16px 14px 8px;
+           box-shadow: 0 2px 8px rgba(200,120,60,.08); overflow-x: auto; }
+  .chart-inner { min-width: 640px; position: relative; }
+  .axis { position: relative; height: 20px; margin-left: 118px; margin-right: 44px; }
+  .axis span { position: absolute; transform: translateX(-50%); font-size: 11px; color: #a9805d; }
+  .today { position: absolute; top: 18px; bottom: 0; width: 2px; background: #2e86c1; opacity: .55; z-index: 2; }
+  .today-lab { position: absolute; top: -2px; transform: translateX(-50%); color: #2e86c1; font-size: 11px; font-weight: 700; z-index: 3; }
+  .trow { display: flex; align-items: center; height: 30px; position: relative; z-index: 1; }
+  .tname { width: 118px; flex: none; font-size: 13px; font-weight: 700; color: #6b4226; padding-right: 8px; text-align: right; }
+  .ttrack { flex: 1; position: relative; height: 14px; background: #faf0e3; border-radius: 7px; }
+  .bar { position: absolute; top: 0; height: 14px; border-radius: 7px; }
+  .bar.scat { border-radius: 0 7px 7px 0; opacity: .8; }
+  .tpeak { width: 44px; flex: none; font-size: 12px; color: #a9805d; padding-left: 8px; }
+  .legend { font-size: 12px; color: #a9805d; margin-top: 10px; }
+  .legend i { display: inline-block; width: 22px; height: 10px; border-radius: 5px; vertical-align: middle; margin: 0 4px 0 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: #fff; border: 1px solid #f3d3ae; border-radius: 14px; padding: 14px 16px;
+          box-shadow: 0 2px 8px rgba(200,120,60,.08); }
+  .cname { font-weight: 800; color: #7a2d12; font-size: 16px; margin-bottom: 6px; }
+  .chip { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
+  .cpeak { font-size: 13px; color: #8a5a3b; margin-top: 8px; }
+  .cnote { font-size: 12px; color: #a9805d; margin-top: 2px; }
+  footer { text-align: center; color: #a9805d; font-size: 12px; padding: 0 16px 40px; }
+  footer a { color: #c0392b; font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="kicker">NARA AUTUMN LEAVES</div>
+  <h1>🍁 奈良の紅葉タイムライン</h1>
+  <p>奈良の紅葉スポット24地点の見頃予想を、時系列でまとめました。</p>
+  <div class="upd">11月19日 更新</div>
+</header>
+<main>
+  <h2>いま見頃のスポット</h2>
+  <div class="now-box"><b>大峯山龍泉寺</b>、<b>奥香落渓</b>、<b>正暦寺</b>、<b>信貴山朝護孫子寺</b>、<b>談山神社</b>、<b>鳥見山公園</b>、<b>長谷寺</b>、<b>吉野神宮</b>、<b>吉野山(奥千本)</b> が見頃です。</div>
+
+  <h2>見頃カレンダー</h2>
+  <div class="chart"><div class="chart-inner">
+    <div class="axis"><span style="left:6.2%">11/10</span><span style="left:21.9%">11/15</span><span style="left:37.5%">11/20</span><span style="left:53.1%">11/25</span><span style="left:68.8%">11/30</span><span style="left:84.4%">12/5</span><span class="today-lab" style="left:34.4%">今日</span></div>
+    <div style="position:relative">
+      <div class="today" style="left:calc(118px + (100% - 162px) * 0.3438)"></div>
+      <div class="trow">
+      <div class="tname">大台ヶ原</div>
+      <div class="ttrack"></div>
+      <div class="tpeak">―</div>
+    </div><div class="trow">
+      <div class="tname">大峯山龍泉寺</div>
+      <div class="ttrack"><div class="bar" style="left:15.6%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:43.8%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/16</div>
+    </div><div class="trow">
+      <div class="tname">岡寺</div>
+      <div class="ttrack"><div class="bar" style="left:34.4%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:62.5%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/22</div>
+    </div><div class="trow">
+      <div class="tname">奥香落渓</div>
+      <div class="ttrack"></div>
+      <div class="tpeak">―</div>
+    </div><div class="trow">
+      <div class="tname">橿原神宮</div>
+      <div class="ttrack"><div class="bar" style="left:40.6%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:68.8%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/24</div>
+    </div><div class="trow">
+      <div class="tname">県立竜田公園</div>
+      <div class="ttrack"><div class="bar" style="left:43.8%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:71.9%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/25</div>
+    </div><div class="trow">
+      <div class="tname">正暦寺</div>
+      <div class="ttrack"><div class="bar" style="left:18.8%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:46.9%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/17</div>
+    </div><div class="trow">
+      <div class="tname">信貴山朝護孫子寺</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">當麻寺西南院</div>
+      <div class="ttrack"><div class="bar" style="left:46.9%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:75.0%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/26</div>
+    </div><div class="trow">
+      <div class="tname">高取城跡</div>
+      <div class="ttrack"><div class="bar" style="left:31.2%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:59.4%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/21</div>
+    </div><div class="trow">
+      <div class="tname">橘寺</div>
+      <div class="ttrack"><div class="bar" style="left:34.4%;width:28.1%;background:linear-gradient(90deg,#f2d06b,#d9a41c)"></div><div class="bar scat" style="left:62.5%;width:21.9%;background:#f7e3a1"></div></div>
+      <div class="tpeak">11/22</div>
+    </div><div class="trow">
+      <div class="tname">談山神社</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">長岳寺</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">壷坂寺</div>
+      <div class="ttrack"></div>
+      <div class="tpeak">―</div>
+    </div><div class="trow">
+      <div class="tname">鳥見山公園</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">奈良公園</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">長谷寺</div>
+      <div class="ttrack"><div class="bar" style="left:18.8%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:46.9%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/17</div>
+    </div><div class="trow">
+      <div class="tname">みたらい渓谷</div>
+      <div class="ttrack"><div class="bar" style="left:6.2%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:34.4%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/13</div>
+    </div><div class="trow">
+      <div class="tname">室生寺</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">吉野神宮</div>
+      <div class="ttrack"><div class="bar" style="left:9.4%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:37.5%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/14</div>
+    </div><div class="trow">
+      <div class="tname">吉野山(奥千本)</div>
+      <div class="ttrack"><div class="bar" style="left:9.4%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:37.5%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/14</div>
+    </div><div class="trow">
+      <div class="tname">吉野山(上千本)</div>
+      <div class="ttrack"><div class="bar" style="left:28.1%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:56.2%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/20</div>
+    </div><div class="trow">
+      <div class="tname">吉野山(下千本)</div>
+      <div class="ttrack"><div class="bar" style="left:31.2%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:59.4%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/21</div>
+    </div><div class="trow">
+      <div class="tname">吉野山(中千本)</div>
+      <div class="ttrack"><div class="bar" style="left:34.4%;width:28.1%;background:linear-gradient(90deg,#e8a04c,#c0392b)"></div><div class="bar scat" style="left:62.5%;width:21.9%;background:#f3c6b8"></div></div>
+      <div class="tpeak">11/22</div>
+    </div>
+    </div>
+    <div class="legend">見頃の帯<i style="background:linear-gradient(90deg,#e8a04c,#c0392b)"></i>見頃予想日−3日〜+6日
+      <i style="background:#f3c6b8"></i>散り紅葉の帯（その後7日間）<i style="background:linear-gradient(90deg,#f2d06b,#d9a41c)"></i>銀杏の見頃帯</div>
+  </div></div>
+
+  <h2>スポット一覧</h2>
+  <div class="grid"><div class="card">
+      <div class="cname">大台ヶ原</div>
+      <span class="chip" style="color:#9e9e9e;background:#f2f2f2;border:1px solid #9e9e9e33">終わり</span>
+      <div class="cpeak">見頃予想：―</div>
+      <div class="cnote">例年10月中旬〜下旬</div>
+    </div><div class="card">
+      <div class="cname">大峯山龍泉寺</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/16</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/16）</div>
+    </div><div class="card">
+      <div class="cname">岡寺</div>
+      <span class="chip" style="color:#7d8c2f;background:#f2f5e4;border:1px solid #7d8c2f33">色づき始め</span>
+      <div class="cpeak">見頃予想：11/22</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">奥香落渓</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：―</div>
+      <div class="cnote">例年11月上旬〜11月下旬</div>
+    </div><div class="card">
+      <div class="cname">橿原神宮</div>
+      <span class="chip" style="color:#7d8c2f;background:#f2f5e4;border:1px solid #7d8c2f33">色づき始め</span>
+      <div class="cpeak">見頃予想：11/24</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">県立竜田公園</div>
+      <span class="chip" style="color:#7d8c2f;background:#f2f5e4;border:1px solid #7d8c2f33">色づき始め</span>
+      <div class="cpeak">見頃予想：11/25</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">正暦寺</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/17</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/17）。11/17に見頃入り、7〜8割色づき</div>
+    </div><div class="card">
+      <div class="cname">信貴山朝護孫子寺</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/20）</div>
+    </div><div class="card">
+      <div class="cname">當麻寺西南院</div>
+      <span class="chip" style="color:#95a34e;background:#f5f7ea;border:1px solid #95a34e33">ほんのり色づき始め</span>
+      <div class="cpeak">見頃予想：11/26</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">高取城跡</div>
+      <span class="chip" style="color:#e67e22;background:#fdf3e7;border:1px solid #e67e2233">半分くらい色づいた</span>
+      <div class="cpeak">見頃予想：11/21</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">橘寺</div>
+      <span class="chip" style="color:#7d8c2f;background:#f2f5e4;border:1px solid #7d8c2f33">銀杏 色づき始め</span>
+      <div class="cpeak">見頃予想：11/22</div>
+      <div class="cnote">銀杏（イチョウ）の名所</div>
+    </div><div class="card">
+      <div class="cname">談山神社</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/20）。11/15に見頃入り</div>
+    </div><div class="card">
+      <div class="cname">長岳寺</div>
+      <span class="chip" style="color:#d35400;background:#fdf0e4;border:1px solid #d3540033">半分以上色づいた</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">壷坂寺</div>
+      <span class="chip" style="color:#d35400;background:#fdf0e4;border:1px solid #d3540033">半分以上色づいた</span>
+      <div class="cpeak">見頃予想：―</div>
+      <div class="cnote">例年11月下旬〜12月上旬</div>
+    </div><div class="card">
+      <div class="cname">鳥見山公園</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/20）</div>
+    </div><div class="card">
+      <div class="cname">奈良公園</div>
+      <span class="chip" style="color:#d35400;background:#fdf0e4;border:1px solid #d3540033">半分以上色づいた</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">長谷寺</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/17</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/17）</div>
+    </div><div class="card">
+      <div class="cname">みたらい渓谷</div>
+      <span class="chip" style="color:#8d6e63;background:#f3ece9;border:1px solid #8d6e6333">落葉中</span>
+      <div class="cpeak">見頃予想：11/13</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/13）。11/17時点で残り6〜5割</div>
+    </div><div class="card">
+      <div class="cname">室生寺</div>
+      <span class="chip" style="color:#e67e22;background:#fdf3e7;border:1px solid #e67e2233">半分くらい色づいた</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">吉野神宮</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/14</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/14）</div>
+    </div><div class="card">
+      <div class="cname">吉野山(奥千本)</div>
+      <span class="chip" style="color:#c0392b;background:#fdecea;border:1px solid #c0392b33">見頃</span>
+      <div class="cpeak">見頃予想：11/14</div>
+      <div class="cnote">見頃入りのため予想日は非掲載（最終予想11/14）</div>
+    </div><div class="card">
+      <div class="cname">吉野山(上千本)</div>
+      <span class="chip" style="color:#d35400;background:#fdf0e4;border:1px solid #d3540033">半分以上色づいた</span>
+      <div class="cpeak">見頃予想：11/20</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">吉野山(下千本)</div>
+      <span class="chip" style="color:#b9770e;background:#fbf3e0;border:1px solid #b9770e33">色づき進む</span>
+      <div class="cpeak">見頃予想：11/21</div>
+      <div class="cnote"></div>
+    </div><div class="card">
+      <div class="cname">吉野山(中千本)</div>
+      <span class="chip" style="color:#7d8c2f;background:#f2f5e4;border:1px solid #7d8c2f33">色づき始め</span>
+      <div class="cpeak">見頃予想：11/22</div>
+      <div class="cnote"></div>
+    </div></div>
+</main>
+<footer>
+  <p>見頃予想・色づき状況はウェザーニュース、各スポットの公式発表をもとに作成しています。予報は変わることがあります。</p>
+  <p style="margin-top:8px">奈良の絶景と季節の行事を映像で発信中｜<a href="https://www.instagram.com/take.creator/">Instagram @take.creator</a></p>
+</footer>
+</body>
+</html>
